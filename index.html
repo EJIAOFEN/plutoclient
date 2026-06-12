@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Pluto Client 官方网站</title>
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #0a0c12;
+            font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            color: #eef2ff;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #11131f;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #aa2e6e;
+            border-radius: 10px;
+            box-shadow: inset 0 0 3px #ff66aa;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #dd5599;
+        }
+
+        .container {
+            max-width: 1024px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        .noise-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -2;
+            background: radial-gradient(circle at 30% 20%, #1a142b, #0a0c12);
+        }
+        .noise-bg::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIzMDAiIGhlaWdodD0iMzAwIj48ZmlsdGVyIGlkPSJmIj48ZmVUdXJidWxlbmNlIHR5cGU9ImZyYWN0YWxOb2lzZSIgYmFzZUZyZXF1ZW5jeT0iLjciIG51bU9jdGF2ZXM9IjMiLz48L2ZpbHRlcj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWx0ZXI9InVybCgjZikiIG9wYWNpdHk9IjAuMDMiLz48L3N2Zz4=');
+            background-repeat: repeat;
+            opacity: 0.4;
+            pointer-events: none;
+        }
+
+        .hero {
+            padding: 64px 0 40px;
+            text-align: center;
+        }
+        h1 {
+            font-family: 'Comfortaa', cursive;
+            font-size: 3.6rem;
+            font-weight: 800;
+            background: linear-gradient(145deg, #ffffff, #e0b0ff, #ff88bb);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            line-height: 1.2;
+            letter-spacing: -1px;
+            margin-bottom: 20px;
+        }
+        .hero-desc {
+            font-size: 1rem;
+            color: #b7c2e6;
+            max-width: 720px;
+            margin: 0 auto 32px;
+        }
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        .btn-download {
+            background: #dd5599;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 60px;
+            font-weight: 700;
+            color: #0a0c12;
+            font-size: 1rem;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .btn-download:hover {
+            background: #ff77aa;
+            transform: scale(1.02);
+            box-shadow: 0 0 14px #dd5599;
+        }
+        .feedback-link {
+            background: transparent;
+            border: 1px solid #dd5599;
+            padding: 11px 26px;
+            border-radius: 60px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            color: #ffbbdd;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.2s;
+        }
+        .feedback-link:hover {
+            background: #dd5599;
+            color: #0a0c12;
+            box-shadow: 0 0 10px #dd5599;
+        }
+        @media (max-width: 600px) {
+            .hero-actions {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            .btn-download, .feedback-link {
+                justify-content: center;
+            }
+        }
+
+        .section {
+            padding: 56px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .section-title {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 36px;
+            position: relative;
+            display: inline-block;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 60%;
+            height: 3px;
+            background: linear-gradient(90deg, #dd5599, #ff88bb, transparent);
+            border-radius: 4px;
+        }
+
+        /* 列表样式 - 无圆点 */
+        .switchable-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        .feature-item {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            font-size: 1rem;
+            color: #e2e8ff;
+            padding: 6px 0;
+            border-bottom: 1px dashed rgba(221, 85, 153, 0.2);
+        }
+        .feature-key {
+            font-family: 'SF Mono', Monaco, 'Cascadia Code', 'Roboto Mono', monospace;
+            font-weight: 600;
+            color: #ff88bb;
+            min-width: 60px;
+            background: transparent;
+            letter-spacing: 0;
+        }
+        .feature-desc {
+            flex: 1;
+            color: #cdd9ff;
+        }
+        .default-enabled-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            background: rgba(12, 14, 24, 0.5);
+            border-radius: 24px;
+            padding: 24px 28px;
+            border: 1px solid rgba(221, 85, 153, 0.2);
+            margin-top: 16px;
+        }
+        .default-item {
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+            font-size: 0.95rem;
+            color: #cbd5ff;
+        }
+        .default-text {
+            flex: 1;
+        }
+        .section-note {
+            font-size: 0.85rem;
+            color: #9aa4ce;
+            margin-top: 18px;
+            font-style: italic;
+            border-left: 2px solid #dd5599;
+            padding-left: 16px;
+        }
+
+        /* 关于区块样式 */
+        .about-content {
+            background: rgba(12, 14, 24, 0.5);
+            border-radius: 24px;
+            padding: 28px 32px;
+            border: 1px solid rgba(221, 85, 153, 0.2);
+            line-height: 1.6;
+        }
+        .about-content p {
+            margin-bottom: 1rem;
+            color: #cdd9ff;
+        }
+        .about-content p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* 底部下载按钮区域 */
+        .download-buttons {
+            display: flex;
+            gap: 24px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0 24px;
+        }
+        .btn-primary {
+            background: #dd5599;
+            border: none;
+            padding: 12px 28px;
+            border-radius: 60px;
+            font-weight: 700;
+            color: #0a0c12;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+        .btn-primary:hover {
+            background: #ff77aa;
+            transform: scale(1.02);
+            box-shadow: 0 0 14px #dd5599;
+        }
+        .btn-secondary {
+            background: #252a44;
+            border: 1px solid #dd5599;
+            color: #eef2ff;
+        }
+        .btn-secondary:hover {
+            background: #dd5599;
+            color: #0a0c12;
+        }
+
+        footer {
+            padding: 42px 0 36px;
+            border-top: 1px solid rgba(255, 255, 255, 0.05);
+            text-align: center;
+            color: #7d86b3;
+            font-size: 0.85rem;
+        }
+        a {
+            text-decoration: none;
+        }
+        @media (max-width: 700px) {
+            .feature-item {
+                flex-wrap: wrap;
+            }
+            .feature-key {
+                min-width: auto;
+            }
+        }
+        .emoji-icon {
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+<div class="noise-bg"></div>
+
+<main>
+    <div class="container">
+        <div class="hero">
+            <h1>Pluto Client</h1>
+            <p class="hero-desc">为 2b2t.xin 打造的生存客户端，开箱即用。<br>支持 Windows 7/10/11</p>
+            <div class="hero-actions">
+                <base target="_blank">
+                <a href="plutoclient/download"  class="btn-download">下载客户端</a>
+                <a href="plutoclient/feedback" class="feedback-link">反馈建议</a>
+            </div>
+        </div>
+
+        <div id="about" class="section">
+            <h2 class="section-title">关于 Pluto Client</h2>
+            <div class="about-content">
+                <p>感谢使用 <strong>Pluto Client</strong> 。目前仅1.0 Beta版本。</p>
+                <p>若您发现各种问题、bug、链接失效、笔误，亦或是持有好的建议或疑问，请与我们联系。</p>
+                <p>我们需要知晓 Pluto Client 在 Windows 8/8.1 及以下的 Windows 版本的可用性。若您愿意对此做出贡献，也可把结果报告给我们</p>
+                <p>请通过邮件 <a href="mailto:blutid@hotmail.com" style="color:#ff99cc;">blutid@hotmail.com</a> 联系</p>
+            </div>
+        </div>
+
+        <div id="features" class="section">
+            <h5>1.0Beta 功能列表</h5>
+            <h2 class="section-title">可开关功能</h2>
+            <div class="switchable-list">
+                <div class="feature-item"><span class="feature-key">R - 杀戮光环</span><span class="feature-desc"><strong>点切。</strong>在任何条件下攻击怪物与玩家。</span></div>
+                <div class="feature-item"><span class="feature-key">I - 点击挖掘</span><span class="feature-desc"><strong>点切。</strong>默认开启。物品栏有相关工具，点击方块自动挖掘。</span></div>
+                <div class="feature-item"><span class="feature-key">F - 鞘翅平飞</span><span class="feature-desc"><strong>点切。</strong>穿鞘翅后双击起飞，WASD水平移动，Shift下降。</span></div>
+                <div class="feature-item"><span class="feature-key">G - 快速使用</span><span class="feature-desc"><strong>点切。</strong>超快的手速做什么都显得轻松。</span></div>
+                <div class="feature-item"><span class="feature-key">Z - 放大镜</span><span class="feature-desc"><strong>长按。</strong>像放大镜一样放大视角。</span></div>
+                <div class="feature-item"><span class="feature-key">X - 箱子透视</span><span class="feature-desc"><strong>点切。</strong>默认关闭。高亮附近所有存储方块。</span></div>
+                <div class="feature-item"><span class="feature-key">C - 自围</span><span class="feature-desc"><strong>点切。</strong>物品栏有黑曜石，自动在周围放置方块防止被炸。触发之后自动关闭。</span></div>
+                <div class="feature-item"><span class="feature-key">F6 - 灵魂出窍</span><span class="feature-desc"><strong>点切。</strong>开启后可自由移动视角穿墙观察周围</span></div>
+                <div class="section-note" style="margin-top: 20px;">点切：即点击开启、再次点击关闭；长按：按住开启、松开关闭。
+            </div>
+        </div>
+
+        <div id="default-enabled" class="section">
+            <h2 class="section-title">默认启用</h2>
+            <div class="default-enabled-grid">
+                <div class="default-item"><span class="default-text">不起跳打出暴击伤害。</span></div>
+                <div class="default-item"><span class="default-text">不死图腾会自动置于副手。</span></div>
+                <div class="default-item"><span class="default-text">饥饿速度降低。</span></div>
+                <div class="default-item"><span class="default-text">使用盾牌格挡的同时可以攻击。</span></div>
+                <div class="default-item"><span class="default-text">掉落不会受伤。</span></div>
+                <div class="default-item"><span class="default-text">物品栏放置工具，点击方块无需手持也可自动挖掘。</span></div>
+                <div class="default-item"><span class="default-text">物品栏快用完时自动从背包补充同类物品。</span></div>
+                <div class="default-item"><span class="default-text">徒手单击矿车和船可击落。</span></div>
+                <div class="default-item"><span class="default-text">步行速度提升。</span></div>
+                <div class="default-item"><span class="default-text">无法被击退。</span></div>
+                <div class="default-item"><span class="default-text">高亮附近的所有实体。</span></div>
+                <div class="default-item"><span class="default-text">无限夜视，永久明亮视野。</span></div>
+                <div class="default-item"><span class="default-text">玩家名称旁有详细信息。</span></div>
+                <div class="default-item"><span class="default-text">鼠标悬停潜影盒自动显示内部物品。</span></div>
+                <div class="default-item"><span class="default-text">可以预测投掷物的落点。</span></div>
+                <div class="default-item"><span class="default-text">玩家进入/离开服务器时的提示。</span></div>
+                <div class="default-item"><span class="default-text">更多隐藏细节等你发掘......</span></div>
+            </div>
+            <div class="section-note" style="margin-top: 20px;">还有更多功能等待你的发现。</div>
+            
+        <div id="notice" class="section">
+            <h2 class="section-title">说明</h2>
+            <p>客户端会保持更新，请定时检查官网进行更新。</p>
+        </div>
+    </div>
+</main>
+
+<footer>
+    <div class="container">
+        <div class="download-buttons">
+            <base target="_blank">
+            <a href="plutoclient/download" target="_blank" class="btn-primary btn-secondary">客户端下载</a>
+            <a href="plutoclient/update" target="_blank" class="btn-primary btn-secondary">客户端更新</a>
+        </div>
+        <p>Pluto Client | By EJIAOFEN | 联系我们: <a href="mailto:blutid@hotmail.com" style="color:#ff99cc;">blutid@hotmail.com</a></p>
+    </div>
+    <h6>Page Ver: 202606_2_3 | Client Ver: PC1.0B_1</h6>
+</footer>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === "#") return;
+            const targetElem = document.querySelector(targetId);
+            if (targetElem) {
+                e.preventDefault();
+                targetElem.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+    console.log("%cPluto Client By EJIAOFEN. This page makes by Deepseek.", "color: #dd5599; font-size: 13px; font-weight: bold;");
+</script>
+</body>
+</html>
