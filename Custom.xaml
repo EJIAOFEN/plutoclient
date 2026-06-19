@@ -1,0 +1,83 @@
+<!-- 本xaml由EJIAOFEN制作，严禁盗用抑或魔改，感谢您使用PlutoClient -->
+<!-- 感谢 HelloClient 感谢 Helloalp -->
+
+<TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="14" Foreground="#e2e2e2" Text="欢迎使用 PlutoClient"/>
+
+<local:MyCard Title="前言" Margin="0,0,0,15" CanSwap="True" IsSwapped="True">
+    <StackPanel Margin="25,40,23,15">
+        <local:MyHint Margin="0,0,0,4" Text="请时刻铭记：在您做出任何改动之前请先思考其可能带来的后果。" />
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text="弄个客户端玩玩&#10;使用前请确保您知晓操作系统相关知识&#10;反馈请发邮件至blutid@hotmail.com, 注意检查垃圾邮件"/>
+        <!-- <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Foreground="gray" Text="首次启动会及其缓慢, 请保持网络畅通并耐心等待. 建议暂时关闭其他联网程序."/> -->
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <local:MyButton Margin="0,0,15,0" Width="140" Height="35" Padding="13,0,13,0" Text="2b2t.xin 官网" EventType="打开网页" EventData="https://www.2b2t.xin"/>
+            <local:MyButton Margin="0,0,15,0" Width="140" Height="35" Padding="13,0,13,0" Text="2b2t.xin Q群" EventType="打开网页" EventData="http://qm.qq.com/cgi-bin/qm/qr?_wv=1027&amp;k=I38-te4uZFJoO06N-ZZr6PKzNPd8Dr4u&amp;authKey=cUWZWRlgBElEX8rEzSq4rKAcuK5HZeMXn2oOLtkJ6DhYQMZWqwDIXe8Cn8nwCGKe&amp;noverify=0&amp;group_code=371884431"/>
+        </StackPanel>
+
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Title="通知" Margin="0,0,0,15" CanSwap="True" IsSwapped="True">
+    <StackPanel Margin="25,40,23,15">
+        <local:MyButton Height="35" HorizontalAlignment="Center" Padding="20,0,20,0" Margin="0,0,0,4" Text="更新日志" EventType="打开文件" EventData=".PLUTO/txt/update_log.txt" />
+        <local:MyButton Height="35" HorizontalAlignment="Center" Padding="20,0,20,0" Text="配置需求" EventType="打开文件" EventData=".PLUTO/txt/hardneed.txt" />
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Title="菜单" Margin="0,0,0,15" CanSwap="True" IsSwapped="True">
+    <StackPanel Margin="25,40,23,15">
+        <local:MyButton Height="35" HorizontalAlignment="Center" Padding="20,0,20,0" Margin="0,0,0,4" Text="打开 Pluto Client 官网" EventType="打开网页" EventData="https://ejiaofen.github.io/plutoclient/" />
+        <local:MyButton Height="35" HorizontalAlignment="Center" Padding="20,0,20,0" Text="说明书" EventType="打开文件" EventData=".PLUTO/txt/manual.txt" />
+    </StackPanel>
+</local:MyCard>
+
+<local:MyCard Title="关于" Margin="0,0,0,15" CanSwap="True" IsSwapped="True">
+    <StackPanel Margin="25,40,23,15">
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="18" Text="起源"/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text="灵感来自HelloClient&#10;启动基于PCL2&#10;更改基于MeteorClient/NamiClient&#10;适用于2b2t.xin"/>
+
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="18" Text="作者"/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Foreground="#abcdef" Text='EJIAOFEN'/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='是萌新:D 还请多多关照'/>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
+            <local:MyButton Height="35" HorizontalAlignment="Left" Padding="20,0,20,0" Margin="0,0,15,15" Text="哔哩哔哩" EventType="打开网页" EventData="https://space.bilibili.com/3494358858860913" />
+        <local:MyButton Height="35" HorizontalAlignment="Left" Padding="20,0,20,0" Margin="0,0,0,15" Text="2b2t.xin 论坛个人页" EventType="打开网页" EventData="https://www.2b2t.xin/home.php?mod=space&amp;uid=8325&amp;do=index" />
+        </StackPanel>
+        
+        <local:MyCard Title="彩蛋" Margin="0,0,0,15" CanSwap="True" IsSwapped="True">
+            <StackPanel Margin="25,40,23,15">
+                <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='对PCL文件夹下的Logo.png进行反转透明度的操作会出现&#10;"EJIAOFEN|EJIAOFEN|..."及"PLUTOCLIENT|PLUTOCLIENT|..."字样&#10;初衷是为了防伪(似乎没啥用'/>
+            </StackPanel>
+        </local:MyCard>
+    </StackPanel>
+</local:MyCard>
+
+
+<local:MyCard Title="1.0R鸣谢名单" Margin="0,0,0,15" CanSwap="True" IsSwapped="True">
+    <StackPanel Margin="25,40,23,15">
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="18" Text='特别鸣谢'/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Foreground="gold" Text='must_2b2t'/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='helloalp'/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='白工程'/>
+
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4"  FontSize="18" Text='鸣谢'/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='xheloze'/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='墨子'/>
+
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="18" Text='集体鸣谢'/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='bilibili.com [哔哩哔哩]'/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='deepseek.com [深度求索Deepseek]'/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='github.com [github]'/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='helloalp.top/hc [HelloClient]'/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='ifdian.net/a/LTCat [爱发电: 龙腾猫跃]'/>
+        <!-- <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='infinityfree.com [网页托管]'/> -->
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='minecraft.net [Minecraft]'/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='code.visualstudio.com [VS Code]'/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='zh.minecraft.wiki [Minecraft中文维基]'/>
+
+    </StackPanel>
+</local:MyCard>
+
+
+<local:MyButton Height="35" HorizontalAlignment="Left" Padding="20,0,20,0" Margin="0,0,0,4" Text="Pluto Client 官网" EventType="打开网页" EventData="https://ejiaofen.github.io/plutoclient/" />
+<local:MyButton Height="35" HorizontalAlignment="Left" Padding="20,0,20,0" Text="各种外挂破解(看不到我)" EventType="打开文件" EventData=".PLUTO/video/nevrgonagivuup.mp4" />
