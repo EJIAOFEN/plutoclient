@@ -3,6 +3,6 @@
 
 This is a test.
 
-You can learn more at [https:/plutoclient.xo.je](https:/plutoclient.xo.je).
+You can learn more at https:/plutoclient.xo.je .
 
 Thanks for using plutoclient.
