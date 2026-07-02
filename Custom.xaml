@@ -1,12 +1,12 @@
 <!-- 本xaml由EJIAOFEN制作，严禁盗用抑或魔改，感谢您使用PlutoClient -->
 <!-- 感谢 HelloClient 感谢 Helloalp -->
 
-<TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="14" Foreground="#e2e2e2" Text="欢迎使用 PlutoClient"/>
+<TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="14" Foreground="#e2e2e2" Text="欢迎使用 Pluto Client"/>
 
 <local:MyCard Title="" Margin="0,0,0,15" CanSwap="False">
     <StackPanel Margin="25,23,23,15">
-        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="18" Foreground="red" Text="Pluto Client 1.0 Release 正在更新!"/>
-        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="18" Foreground="red" Text="请定时关注官网!"/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="18" Foreground="red" Text="Pluto Client 1.0 Beta2 已更新!"/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="18" Foreground="red" Text="请前往官网进行更新!"/>
     </StackPanel>
 </local:MyCard>
 
@@ -25,9 +25,10 @@
 </local:MyCard>
 
 <local:MyCard Title="教程文档" Margin="0,0,0,15" CanSwap="True" IsSwapped="True">
-    <StackPanel Margin="25,40,23,15">
-        <local:MyButton Height="35" HorizontalAlignment="Center" Padding="20,0,20,0" Margin="0,0,0,4" Text="说明书" EventType="打开文件" EventData=".PLUTO/txt/manual.txt"/>
-        <local:MyButton Height="35" HorizontalAlignment="Center" Padding="20,0,20,0" Margin="0,0,0,4" Text="如何登录" EventType="打开文件" EventData=".PLUTO/guide/how-to-login.txt"/>
+    <StackPanel Margin="25,40,23,15" HorizontalAlignment="Center">
+        <local:MyButton Height="35" Padding="20,0,20,0" Margin="0,0,0,4" Text="说明书" EventType="打开文件" EventData=".PLUTO/txt/manual.txt"/>
+        <local:MyButton Height="35" Padding="20,0,20,0" Margin="0,0,0,4" Text="如何登录" EventType="打开文件" EventData=".PLUTO/guide/how-to-login.txt"/>
+        <local:MyButton Height="35" Padding="20,0,20,0" Margin="0,0,0,4" Text="如何登录 2b2t.xin" EventType="打开文件" EventData=".PLUTO/guide/how-to-login-2b2t.xin.txt"/>
     </StackPanel>
 </local:MyCard>
 
@@ -38,9 +39,10 @@
     </StackPanel>
 </local:MyCard>
 
-<local:MyCard Title="菜单" Margin="0,0,0,15" CanSwap="True" IsSwapped="True">
-    <StackPanel Margin="25,40,23,15">
-        <local:MyButton Height="35" HorizontalAlignment="Center" Padding="20,0,20,0" Margin="0,0,0,4" Text="今日人品" EventType="打开文件" EventData=".PLUTO/vbs/today.vbs"/>
+<local:MyCard Title="工具" Margin="0,0,0,15" CanSwap="True" IsSwapped="True">
+    <StackPanel Margin="25,40,23,15" HorizontalAlignment="Center">
+        <local:MyButton Height="35" Padding="20,0,20,0" Margin="0,0,0,4" Text="清理工具" EventType="打开文件" EventData=".PLUTO/bat/cleaner_menu.bat"/>
+        <local:MyButton Height="35" Padding="20,0,20,0" Margin="0,0,0,4" Text="今日人品" EventType="打开文件" EventData=".PLUTO/vbs/today.vbs"/>
     </StackPanel>
 </local:MyCard>
 
@@ -53,14 +55,14 @@
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Foreground="#abcdef" Text='EJIAOFEN'/>
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='是萌新:D 还请多多关照'/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-            <local:MyButton Height="35" HorizontalAlignment="Left" Padding="20,0,20,0" Margin="0,0,15,15" Text="哔哩哔哩" EventType="打开网页" EventData="https://space.bilibili.com/3494358858860913"/>
-            <local:MyButton Height="35" HorizontalAlignment="Left" Padding="20,0,20,0" Margin="0,0,0,15" Text="2b2t.xin 论坛个人页" EventType="打开网页" EventData="https://www.2b2t.xin/home.php?mod=space&amp;uid=8325&amp;do=index"/>
+            <local:MyButton Height="35" Padding="20,0,20,0" Margin="0,0,15,15" Text="哔哩哔哩" EventType="打开网页" EventData="https://space.bilibili.com/3494358858860913"/>
+            <local:MyButton Height="35" Padding="20,0,20,0" Margin="0,0,0,15" Text="2b2t.xin 论坛个人页" EventType="打开网页" EventData="https://www.2b2t.xin/home.php?mod=space&amp;uid=8325&amp;do=index"/>
         </StackPanel>
     </StackPanel>
 </local:MyCard>
 
 
-<local:MyCard Title="1.0B(r_u)鸣谢名单" Margin="0,0,0,15" CanSwap="True" IsSwapped="True">
+<local:MyCard Title="1.0B2鸣谢名单" Margin="0,0,0,15" CanSwap="True" IsSwapped="True">
     <StackPanel Margin="25,40,23,15">
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="18" Text='特别鸣谢'/>
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Foreground="gold" Text='must_2b2t'/>
@@ -86,7 +88,7 @@
 </local:MyCard>
 
 
-<TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text="主页对应版本: 1.0B(re_upload)"/>
+<TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text="主页对应版本: 1.0Beta2"/>
 <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text="若版本过旧会导致新功能无法使用!"/>
 <local:MyButton Height="35" HorizontalAlignment="Left" Padding="20,0,20,0" Margin="0,0,0,4" Text="Pluto Client 官网" EventType="打开网页" EventData="https://ejiaofen.github.io/plutoclient/"/>
 <local:MyButton Height="35" HorizontalAlignment="Left" Padding="20,0,20,0" Text="各种外挂破解(看不到我)" EventType="打开网页" EventData="https://www.bilibili.com/video/BV1GJ411x7h7/"/>
