@@ -53,7 +53,7 @@
 
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="18" Text="作者"/>
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Foreground="#abcdef" Text='EJIAOFEN'/>
-        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='是萌新:D 还请多多关照'/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text='是萌新awa 还请多多关照'/>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
             <local:MyButton Height="35" Padding="20,0,20,0" Margin="0,0,15,15" Text="哔哩哔哩" EventType="打开网页" EventData="https://space.bilibili.com/3494358858860913"/>
             <local:MyButton Height="35" Padding="20,0,20,0" Margin="0,0,0,15" Text="2b2t.xin 论坛个人页" EventType="打开网页" EventData="https://www.2b2t.xin/home.php?mod=space&amp;uid=8325&amp;do=index"/>
