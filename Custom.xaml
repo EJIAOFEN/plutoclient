@@ -5,8 +5,8 @@
 
 <local:MyCard Title="" Margin="0,0,0,15" CanSwap="False">
     <StackPanel Margin="25,23,23,15">
-        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="18" Foreground="red" Text="Pluto Client 1.0 Beta2 已更新!"/>
-        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="18" Foreground="red" Text="请前往官网进行更新!"/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="18" Foreground="red" Text="Pluto Client 1.0 Beta3 已更新!"/>
+        <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="18" Foreground="red" Text="使用Beta2的请前往官网进行更新!"/>
     </StackPanel>
 </local:MyCard>
 
@@ -62,7 +62,7 @@
 </local:MyCard>
 
 
-<local:MyCard Title="1.0B2鸣谢名单" Margin="0,0,0,15" CanSwap="True" IsSwapped="True">
+<local:MyCard Title="鸣谢名单" Margin="0,0,0,15" CanSwap="True" IsSwapped="True">
     <StackPanel Margin="25,40,23,15">
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" FontSize="18" Text='特别鸣谢'/>
         <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Foreground="gold" Text='must_2b2t'/>
@@ -88,7 +88,7 @@
 </local:MyCard>
 
 
-<TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text="主页对应版本: 1.0Beta2"/>
+<TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text="主页对应版本: 1.0Beta3"/>
 <TextBlock TextWrapping="Wrap" Margin="0,0,0,4" Text="若版本过旧会导致新功能无法使用!"/>
 <local:MyButton Height="35" HorizontalAlignment="Left" Padding="20,0,20,0" Margin="0,0,0,4" Text="Pluto Client 官网" EventType="打开网页" EventData="https://plutoclient.xo.je/"/>
 <local:MyButton Height="35" HorizontalAlignment="Left" Padding="20,0,20,0" Text="各种外挂破解(看不到我)" EventType="打开网页" EventData="https://www.bilibili.com/video/BV1GJ411x7h7/"/>
